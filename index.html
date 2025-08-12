@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>SmartGrocery </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand">
+        <h1>KitchenMate</h1>
+        <p class="tag">Speak or type your pantry — results will always include a required ingredient.</p>
+
+      </div>
+   <div class="center-container">
+<h1 id="welcome-text">Welcome to SmartGrocery</h1>
+</div>
+<script>
+const messages = [
+{ text: "Welcome to SmartGrocery", color: "#c394e0" }, // Blue
+{ text: "Explore Delicious Recipes", color: "#b97cde" }, // Green
+{ text: "Your Culinary Adventure Awaits", color: "#ad64d9" }, // Red
+{ text: "Let's Get Cooking!", color: "#a358d1" } // Yellow
+];
+let currentIndex = 0;
+function changeText() {
+const welcomeText = document.getElementById('welcome-text');
+welcomeText.style.opacity = 0; // Fade out
+setTimeout(() => {
+if (currentIndex < messages.length) {
+welcomeText.textContent = messages[currentIndex].text; // Change text
+welcomeText.style.color = messages[currentIndex].color; // Change color
+welcomeText.style.opacity = 1; // Fade in
+currentIndex++; // Move to the next message
+}
+}, 1000); // Wait for fade out to complete
+}
+const interval = setInterval(() => {
+changeText();
+if (currentIndex >= messages.length) {
+clearInterval(interval); // Stop the interval after all messages are displayed
+}
+}, 3000); // Change text every 3 seconds
+changeText(); // Initial call to set the first text
+</script>
+
+      <div class="header-actions">
+        <button id="openShopping" class="fab">🛒</button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <!-- Left: Pantry + controls -->
+      <section class="pane card sidebar">
+        <h2>Pantry</h2>
+
+        <label class="label">Mandatory ingredient (every recipe must include):</label>
+        <input id="mandatoryInput" class="mandatory" placeholder="e.g., milk" />
+
+        <div class="input-row">
+          <input id="ingredientInput" placeholder="Type or press mic and say: eggs, tomato, cheese" />
+          <button id="voiceBtn" class="mic">🎤</button>
+          <button id="addBtn" class="btn primary">Add</button>
+        </div>
+
+        <div class="pantry-chips" id="pantryList"></div>
+
+        <div class="controls">
+          <button id="findBtn" class="btn accent">Find Recipes</button>
+          <button id="savePantry" class="btn ghost">Save Pantry</button>
+          <button id="clearPantry" class="btn ghost">Clear</button>
+        </div>
+
+        <div class="small muted">Tip: speak all ingredients at once separated by commas. Chrome works best.</div>
+      </section>
+
+      <!-- Middle: Recipes -->
+      <section class="pane card recipes" id="recipesPane">
+        <div class="pane-header">
+          <h2>Recipe Suggestions</h2>
+          <div id="loading" class="muted hidden">⏳ Fetching recipes…</div>
+        </div>
+        <div id="recipes" class="recipe-list"></div>
+      </section>
+
+      <!-- Right: Shopping & Saved -->
+      <aside class="pane card sidecol">
+        <div>
+          <h3>Shopping List</h3>
+          <div id="shoppingList" class="shopping-area">No items yet.</div>
+          <div class="shopping-actions">
+            <button id="copyShopping" class="btn small">Copy</button>
+            <button id="downloadShopping" class="btn small">Download</button>
+            <button id="clearShopping" class="btn small ghost">Clear</button>
+          </div>
+        </div>
+
+        <hr/>
+
+        <div>
+          <h3>Saved Recipes</h3>
+          <div id="saved" class="saved-area">No saved recipes yet.</div>
+        </div>
+      </aside>
+    </main>
+
+    
+  </div>
+
+      
+  
+  <script src="script.js" defer></script>
+</body>
+</html>
+
+
+
+

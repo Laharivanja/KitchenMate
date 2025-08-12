@@ -1,0 +1,55 @@
+:root{
+  --bg1:#ffecd2; --bg2:#fcb69f; --card:#ffffff;
+  --accent:#ff6b6b; --accent2:#7c3aed; --muted:#6b7280;
+  --glass: rgba(255,255,255,0.92);
+  --radius:12px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
+  background: linear-gradient(160deg,var(--bg1),var(--bg2));
+  color:#0f172a; -webkit-font-smoothing:antialiased; min-height:100vh;
+}
+.app{max-width:1200px;margin:28px auto;padding:18px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.brand h1{margin:0;font-size:28px;color:var(--accent2)}
+.tag{margin:4px 0 0;color:var(--muted);font-size:13px}
+.fab{background:linear-gradient(90deg,var(--accent2),var(--accent));color:white;padding:10px;border-radius:10px;border:none}
+
+.grid{display:grid;grid-template-columns:320px 1fr 280px;gap:18px}
+.card{background:var(--glass);border-radius:var(--radius);padding:14px;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+.sidebar .label{font-size:13px;color:var(--muted);margin-bottom:6px;display:block}
+.input-row{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+#ingredientInput,#mandatoryInput{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);outline:none}
+.mic{background:#fde68a;border:none;padding:10px;border-radius:10px;cursor:pointer}
+.btn{border:none;cursor:pointer;padding:10px 12px;border-radius:10px;font-weight:700}
+.primary{background:linear-gradient(90deg,var(--accent2),var(--accent));color:white}
+.accent{background:linear-gradient(90deg,#7c3aed,#ff6b6b);color:white}
+.ghost{background:transparent;border:1px solid rgba(0,0,0,0.06)}
+.small{padding:6px 8px;font-size:13px}
+.muted{color:var(--muted)}
+.pantry-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.chip{background:#fff;padding:8px 12px;border-radius:999px;border:1px solid rgba(0,0,0,0.04);font-weight:700;display:flex;gap:8px;align-items:center}
+.chip button{background:transparent;border:none;color:#ef4444;cursor:pointer;font-weight:800}
+.controls{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.pane-header{display:flex;justify-content:space-between;align-items:center}
+.recipe-list{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+.recipe-card{display:flex;gap:14px;align-items:flex-start;padding:12px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(0,0,0,0.04);transition:transform .12s ease}
+.recipe-card:hover{transform:translateY(-6px)}
+.recipe-img{width:160px;height:110px;object-fit:cover;border-radius:10px;flex-shrink:0}
+.recipe-body{flex:1;min-width:0}
+.recipe-title{font-weight:800;margin:0}
+.recipe-meta{color:var(--muted);font-size:13px;margin-top:6px}
+.recipe-actions{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+.collapsible{margin-top:10px;background:#f8fafc;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.03)}
+.sidecol .shopping-area{min-height:80px;background:rgba(255,255,255,0.6);padding:8px;border-radius:8px;border:1px dashed rgba(0,0,0,0.04)}
+.sidecol .saved-area{min-height:120px;background:rgba(255,255,255,0.6);padding:8px;border-radius:8px;border:1px dashed rgba(0,0,0,0.04)}
+.footer{text-align:center;margin-top:14px;color:var(--muted);font-size:13px}
+.hidden{display:none}
+
+/* responsive */
+@media (max-width:980px){
+  .grid{grid-template-columns:1fr;padding:8px}
+  .recipe-img{display:none}
+}
