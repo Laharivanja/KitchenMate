@@ -18,6 +18,8 @@ A web app to find recipes based on ingredients you have in your pantry. Add ingr
 - Frontend: HTML, CSS, JavaScript (vanilla)
 - Backend: Node.js
 
+## DeploymentLink
+https://kitchenmate-livid.vercel.app/
 
 ## Setup
 
@@ -25,3 +27,5 @@ A web app to find recipes based on ingredients you have in your pantry. Add ingr
    ```bash
    git clone https://github.com/yourusername/your-repo.git
    cd your-repo
+
+   
