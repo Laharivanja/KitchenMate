@@ -2,7 +2,7 @@
   --bg1:#ffecd2; --bg2:#fcb69f; --card:#ffffff;
   --accent:#ff6b6b; --accent2:#7c3aed; --muted:#6b7280;
   --glass: rgba(255,255,255,0.92);
-  --radius:12px;
+  --radius:13px;
 }
 
 *{box-sizing:border-box}
